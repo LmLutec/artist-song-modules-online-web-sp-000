@@ -1,5 +1,5 @@
 module Memorable
-  #module ClassMethods
+  module ClassMethods
   
    def reset_all
       all.clear
@@ -9,12 +9,13 @@ module Memorable
       all.count
    end  
   
+  end 
   
-  
-  
-  
-  #end 
-  
+  module InstanceMethods 
+    def initialize
+      self.class.all << self
+    #@songs = []
+    end
   
   
 end 
